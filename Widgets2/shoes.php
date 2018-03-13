@@ -2,6 +2,7 @@
 //customer_view.php - shows details of a single customer
 ?>
 <?php include 'includes/config.php';?>
+
 <?php
 
 //process querystring here
@@ -40,7 +41,7 @@ if(mysqli_num_rows($result) > 0)
 }
 
 ?>
-<?php include 'includes/header.php';?>
+<?php get_header()?>
 <h1><?=$pageID?></h1>
 <?php
     
@@ -56,6 +57,8 @@ if($Feedback == '')
     
     echo '<img src="uploads/shoe' . $id . '.png" />';
     
+   
+    
     echo '</p>'; 
 }else{//warn user no data
     echo $Feedback;
@@ -70,4 +73,4 @@ echo '<p><a href="shoe_list.php">Go Back</a></p>';
 @mysqli_close($iConn);
 
 ?>
-<?php include 'includes/footer.php';?>
+<?php get_footer()?>
